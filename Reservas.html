@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <div class="wrapper" >
+    <div class="wrapper">
         <div class="main" style="border: 5px solid rgba(156,166,255);">
 
 
 
             <div class="cuadrante">
-        
+
                 <h3>Habitacion</h3>
                 <hr>
                 <img src="assets/hotel1.jpg" alt="imagen de habitacion" class="imagen1">
-        
+
                 <fieldset class="selecciones">
                     <div class="casillas">
                         <select>
@@ -27,85 +27,110 @@
                             <option>Sola</option>
                             <option>Compartida</option>
                         </select>
-        
+
                     </div>
-        
+
                     <div class="casillas">
                         <select>
                             <option>Tipo de camas</option>
                             <option>Sola</option>
                             <option>Compartida</option>
                         </select>
-        
+
                     </div>
-        
+
                 </fieldset>
-        
+
             </div>
-        
+
             <div class="cuadrante">
-        
+
                 <h3>Información de reserva</h3>
                 <hr>
+
+                <label for="correoelectronico" class="label">Correo Electrónico</label>
+                <input type="email" class="input" placeholder="correo@dominio.com" required style="margin-bottom: -10px;">
+
                 <div class="check">
-        
+
                     <label for="check-in"></label>
                     <p>check-in</p>
                     <input type="date" id="check-in" placeholder="check-in">
-        
+
                 </div>
-        
+
                 <div class="check">
-        
+
                     <label for="check-out"></label>
                     <p>check-out</p>
                     <input type="date" id="check-out" placeholder="check-out">
-        
+
                 </div>
-        
-                <label class="input"><input type="checkbox">Huespedes adicionales</label>
-        
-                <div class="numhuespedes">
-        
+
+                <label class="label"><input type="checkbox" id="husadicionales">Huespedes adicionales</label>
+
+                <div id="opadicionales" class="transicion-desvanecer" style="margin-top: 20px;">
                     <label for="numero" class="label">Numero de huespedes adicionales</label>
-                    <input type="number" id="numero" class="input" placeholder="Numero de huespedes adicionales">
-        
+                    <div class="input-group">
+                        
+                        <input type="number" id="numero" class="input" placeholder="Numero de huespedes adicionales">
+                        <label class="input2"><input type="checkbox">Huespedes menores de edad</label>
+
+                    </div>             
+
                 </div>
-        
-                <label class="input2"><input type="checkbox">Huespedes menores de edad</label>
-        
+
             </div>
-        
+
             <div class="cuadrante">
-        
+
                 <h3>Servicios adicionales</h3>
                 <hr>
-                <label class="input"><input type="checkbox">Restaurante</label>
-        
-                <div class="restaurante">
-        
+                <label class="input"><input type="checkbox" id="restaurante">Restaurante</label>
+
+                <div class="transicion-desvanecer" id="resadicionales" style="margin-left: 40px;">
+
                     <label class="input"><input type="checkbox">Desayuno</label>
                     <label class="input"><input type="checkbox">Almuerzo</label>
                     <label class="input"><input type="checkbox">Cena</label>
-        
+
                 </div>
-        
+
                 <div class="servicios">
-        
+
                     <label class="input-servicios"><input type="checkbox">Lavanderia</label>
                     <label class="input-servicios"><input type="checkbox">Parqueadero</label>
                     <label class="input-servicios"><input type="checkbox">Servicio de guia</label>
                     <label class="input-servicios"><input type="checkbox">Transporte al pueblo</label>
-        
+
                 </div>
-        
-        
+
+
             </div>
-        
-            <a href="index.html"><input type="submit" value="Reservar habitacion" class="enviar" ></a>
-        
+
+            <a href="index.html"><input type="submit" value="Reservar habitacion" class="enviar"></a>
+
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+
+    function mostrar(checkboxPrincipal, checkboxesAdicionales) {
+
+        checkboxPrincipal.addEventListener('change', function () {
+            if (this.checked) {
+                checkboxesAdicionales.classList.add('mostrar');               
+            } else {
+                checkboxesAdicionales.classList.remove('mostrar');               
+            }
+        });
+
+    }
+
+    mostrar(document.getElementById('husadicionales'), document.getElementById('opadicionales'));
+    mostrar(document.getElementById('restaurante'), document.getElementById('resadicionales'));
+
+</script>

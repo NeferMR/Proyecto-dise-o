@@ -1,55 +1,52 @@
-main{
+main {
     background-color: aquamarine;
     margin-left: 40px;
     margin-right: 40px;
 }
 
-.primertitulo{
+.primertitulo {
     margin: 40px;
 }
 
-.imagen1{   
+.imagen1 {
     margin-left: 60px;
     padding-top: 0px;
     height: 20%;
     width: 20%;
 }
 
-.selecciones{
+.selecciones {
     margin-left: 200px;
     display: inline-block;
 }
 
-.segundocuadrante, .tercercuadrante{
+.segundocuadrante,
+.tercercuadrante {
     margin-left: 40px;
 }
 
-.casillas{
+.casillas {
     margin-bottom: 50px;
 }
 
-.check{
+.check {
     margin: 20px 180px;
-    display: inline-block;    
+    display: inline-block;
 }
 
-.input{
+.input {
     display: block;
     margin-left: 180px;
     margin-right: 180px;
     margin-bottom: 20px;
 }
 
-.input-servicios{
+.input-servicios {
     display: inline-block;
     margin-right: 80px;
 }
 
-.numhuespedes{
-    display: inline-block;
-}
-
-.label{
+.label {
     margin-top: 80px;
     margin-left: 180px;
 }
@@ -58,21 +55,21 @@ main{
     width: 220px;
 }
 
-.input2{
+.input2 {
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 
 
-.restaurante{
+.restaurante {
     margin-left: 40px;
 }
 
-.servicios{
+.servicios {
     margin-left: 180px;
 }
 
-.enviar{
+.enviar {
     margin-left: 350px;
     margin-top: 50px;
     width: 40%;
@@ -87,7 +84,16 @@ main{
     cursor: pointer;
 }
 
-.enviar:hover{
+.enviar:hover {
     background: rgb(29, 28, 28);
     transform: scale(1.1);
+}
+
+.transicion-desvanecer {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.transicion-desvanecer.mostrar {
+    opacity: 1;
 }
