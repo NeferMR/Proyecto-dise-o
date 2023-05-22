@@ -131,7 +131,7 @@ hr {
 }
 
 .selecciones {
-    margin-left: 200px;
+    margin-left: 500px;
     display: inline-block;
 }
 
@@ -140,26 +140,129 @@ hr {
     margin-bottom: 50px;
 }
 
+.select{
+    background-color: rgb(243, 255, 250);
+    font-size: 15px;
+    appearance: none;
+    outline: none;
+    border: solid 2px #c1c1c1;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
 .check {
     margin: 20px 180px;
     display: inline-block;
 }
 
+#fonthus{
+    display: block;
+    margin-top: 10px;
+}
+
 .input {
     display: block;
     margin-left: 180px;
-    margin-right: 180px;
     margin-bottom: 20px;
 }
 
+.input-correo{
+    margin-top: 60px;
+    margin-left: 180px;
+    height: 20px;
+    width: 300px;
+    position: relative;
+}
+
+.input-correo input{
+    background-color: rgb(242, 253, 253);
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid #2789b6;
+}
+
+.input-correo input:focus ~ label,
+.input-correo input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    bottom: 15px;
+}
+
+.input-correo label{
+    position: absolute;
+    bottom: 0px;
+    left: 8px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.input-correo .underline{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #4158d0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.input-correo input:focus ~ .underline::before,
+.input-correo input:valid ~ .underline::before{
+    transform: scaleX(1);
+}
+
 .input-servicios {
-    display: inline-block;
-    margin-right: 80px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px ;
+    margin-right: -80px;
 }
 
 .label {
-    margin-top: 80px;
+    padding-top: -20px;
     margin-left: 180px;
+}
+
+input[type="checkbox"] {
+    margin-left: 180px;
+    position: relative;
+    appearance: none;
+    width: 70px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+input[type="checkbox"]:checked{
+    background: #4cc1f7;
+}
+
+input[type="checkbox"]::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+input:checked[type="checkbox"]::after{
+    left: 55%;
+}
+
+.input label{
+    margin-top: -90px;
 }
 
 #numero {
@@ -168,12 +271,6 @@ hr {
 
 .input2 {
     display: inline-block;
-    margin-left: 50px;
-}
-
-
-.servicios {
-    margin-left: 180px;
 }
 
 .enviar {
@@ -221,4 +318,5 @@ fieldset {
 .input-group {
     display: flex;
     align-items: center;
+    margin: 10px 0px ;
 }
